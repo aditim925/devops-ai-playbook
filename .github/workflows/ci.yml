@@ -9,6 +9,12 @@ on:
       - main
   workflow_dispatch:
 
+#GITHUB_TOKEN is automatically provided by GitHub Actions, but the 
+#workflow needs explicit permission to write packages to GHCR.
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   application-build:
     name: Build application
@@ -65,11 +71,28 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      
+
+      - name: Log in to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build Docker image
         run: |
+          IMAGE=ghcr.io/${{ github.repository }}/${{ matrix.service }}:${{ github.sha }}
+
           docker build \
-            -t boutique/${{ matrix.service }}:ci \
+            -t $IMAGE \
             ${{ matrix.context }}
+
+          if [ "${{ github.event_name }}" != "pull_request" ]; then
+            docker push $IMAGE
+          fi
+
 
   kubernetes-validation:
     name: Validate Kubernetes manifests
