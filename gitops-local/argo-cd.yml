@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: boutique
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/aditim925/devops-ai-playbook.git
+    targetRevision: main
+    path: gitops-local/overlays/ghcr
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: boutique
+
+  syncPolicy: {}
