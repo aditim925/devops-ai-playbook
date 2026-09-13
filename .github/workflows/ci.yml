@@ -145,3 +145,4 @@ jobs:
       - name: Validate local manifests
         run: kubectl kustomize gitops-local/overlays/local/
         
+#testing argocd
