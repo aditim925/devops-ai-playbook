@@ -7,28 +7,28 @@ resources:
 images:
   - name: boutique/auth
     newName: ghcr.io/aditim925/devops-ai-playbook/auth
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/gateway
     newName: ghcr.io/aditim925/devops-ai-playbook/gateway
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/product-service
     newName: ghcr.io/aditim925/devops-ai-playbook/product-service
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/orders
     newName: ghcr.io/aditim925/devops-ai-playbook/orders
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/order-service
     newName: ghcr.io/aditim925/devops-ai-playbook/order-service
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/user-service
     newName: ghcr.io/aditim925/devops-ai-playbook/user-service
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
 
   - name: boutique/frontend
     newName: ghcr.io/aditim925/devops-ai-playbook/frontend
-    newTag: 574fc6fffbd450a565682e6827b959b9c07a42e9
+    newTag: 89d1132d8e94a9b9b99c14a0ccd79990e15c6081
